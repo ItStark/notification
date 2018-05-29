@@ -4,7 +4,7 @@ use yii\widgets\ActiveForm;
 ?>
 
 
-<? $this->title = 'WYP Sample Application';
+<? $this->title = 'Reco Deneme';
 
 
 

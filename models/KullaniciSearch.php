@@ -5,25 +5,26 @@ namespace kouosl\notification\models;
 use Yii;
 use yii\base\Model;
 use yii\data\ActiveDataProvider;
+use kouosl\notification\models\Kullanici;
 
 /**
- * NotificationSearch represents the model behind the search form about `app\modules\notification\models\Notification`.
+ * KullaniciSearch represents the model behind the search form of `kouosl\notification\models\Kullanici`.
  */
-class NotificationSearch extends Notification
+class KullaniciSearch extends Kullanici
 {
     /**
-     * @inheritdoc
+     * {@inheritdoc}
      */
     public function rules()
     {
         return [
-            [['id'], 'integer'],
-            [['title', 'description'], 'safe'],
+            [['kullanici_id'], 'integer'],
+            [['kullanici_adSoyad', 'okundu_tarih'], 'safe'],
         ];
     }
 
     /**
-     * @inheritdoc
+     * {@inheritdoc}
      */
     public function scenarios()
     {
@@ -40,7 +41,9 @@ class NotificationSearch extends Notification
      */
     public function search($params)
     {
-        $query = notification::find();
+        $query = Kullanici::find();
+
+        // add conditions that should always apply here
 
         $dataProvider = new ActiveDataProvider([
             'query' => $query,
@@ -54,12 +57,13 @@ class NotificationSearch extends Notification
             return $dataProvider;
         }
 
+        // grid filtering conditions
         $query->andFilterWhere([
-            'id' => $this->id,
+            'kullanici_id' => $this->kullanici_id,
+            'okundu_tarih' => $this->okundu_tarih,
         ]);
 
-        $query->andFilterWhere(['like', 'title', $this->title])
-            ->andFilterWhere(['like', 'description', $this->description]);
+        $query->andFilterWhere(['like', 'kullanici_adSoyad', $this->kullanici_adSoyad]);
 
         return $dataProvider;
     }

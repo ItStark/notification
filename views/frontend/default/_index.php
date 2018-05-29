@@ -8,8 +8,9 @@ $this->params['breadcrumbs'][] = $this->title;
 
 
 Portlet::begin(['title' => $this->title,'subTitle' => 'samples data','icon' => 'glyphicon glyphicon-cog']);
-
+echo "selamlar";
 echo $this->render('index');
+
 
 Portlet::end();
 
