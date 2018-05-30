@@ -16,6 +16,6 @@
             'class' => 'kouosl\notification\Module'
         ]</code>
 
-* Bütün işlemleri tamamladıktan sonra [http://portal.kouosl/admin/notification/bildirim/index]( http://portal.kouosl/admin/notification/bildirim/index) url ile yii2 modülüne erişim sağlanabilir.
-
 * /portal altında komut satırında <code>composer update</code> ile modülü bütünleştirin.
+
+* Bütün işlemleri tamamladıktan sonra [http://portal.kouosl/admin/notification/bildirim/index]( http://portal.kouosl/admin/notification/bildirim/index) url ile yii2 modülüne erişim sağlanabilir.
